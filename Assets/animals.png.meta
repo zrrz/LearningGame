@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: e33ebad6cb55d4d47a2756e220b4c53d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CAT
+    21300002: PIG
+    21300004: BEAR
+    21300006: BUNNY
+    21300008: COW
+    21300010: DUCK
+    21300012: MOUSE
+    21300014: DOG
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: CAT
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 587
+        width: 151
+        height: 140
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PIG
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 592
+        width: 147
+        height: 141
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BEAR
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 400
+        width: 149
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BUNNY
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 162
+        width: 137
+        height: 193
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: COW
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 388
+        width: 163
+        height: 156
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DUCK
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 401
+        width: 141
+        height: 152
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MOUSE
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 163
+        width: 186
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DOG
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 594
+        width: 174
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
