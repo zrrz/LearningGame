@@ -43,7 +43,7 @@ public class WordManager : MonoBehaviour {
 	[System.NonSerialized]
 	public bool changingWord = false;
 
-	public int wordsToWin = 1;
+	//public int wordsToWin = 1;
 
 	[System.NonSerialized]
 	public int wordsDone = 0;
@@ -51,9 +51,14 @@ public class WordManager : MonoBehaviour {
 	[System.NonSerialized]
 	public bool gameWon = false;
 
-	void Start () {
-		s_instance = this;
+	public float gameTimer = 0f;
+	public float gameTime = 90.0f;
 
+	void Awake() {
+		s_instance = this;
+	}
+
+	void Start () {
 		letterDictionary = new Dictionary<string, GameObject>();
 
 		for(int i = 0; i < letterPrefabs.Count; i++) {
@@ -64,6 +69,8 @@ public class WordManager : MonoBehaviour {
 		spawnedLetters = new List<GameObject> ();
 
 		StartCoroutine("NewWord", false);
+
+		gameTimer = gameTime;
 	}
 
 	void Update() {
@@ -82,7 +89,31 @@ public class WordManager : MonoBehaviour {
 					NewLetters();
 				}
 			}
+			if(gameTimer > 0)
+				gameTimer -= Time.deltaTime;
+			if(gameTimer <= 0) {
+				gameTimer = 0f;
+				//Win game
+				s_instance.gameWon = true;
+				GameObject text = (GameObject) Instantiate(s_instance.winText);
+				foreach (TextMesh t in text.transform.GetComponentsInChildren<TextMesh>()) {
+					if(wordsDone == 1)
+						t.text = wordsDone + " points!";
+					else
+						t.text = wordsDone + " points!";
+				}
+				StartCoroutine("DoNextLevelToggle");
+
+				foreach(GameObject obj in s_instance.spawnedLetters) {
+					Destroy(obj);
+				}
+			}
 		}
+	}
+
+	IEnumerator DoNextLevelToggle() { 
+		yield return new WaitForSeconds (1.5f);
+		GameObject.Find("InputManagerMaster").GetComponent<InputOSC>().doLevelChange = true;
 	}
 
 	void NewLetters() {
@@ -155,15 +186,7 @@ public class WordManager : MonoBehaviour {
 
 		if(s_instance.currentLetterSpot > s_instance.currentWord.name.Length - 1) {
 			s_instance.wordsDone++;
-			if(s_instance.wordsDone >= s_instance.wordsToWin) {
-				s_instance.gameWon = true;
-				Instantiate(s_instance.winText, Vector3.zero, Quaternion.identity);
-				foreach(GameObject obj in s_instance.spawnedLetters) {
-					Destroy(obj);
-				}
-			} else {
-				s_instance.StartCoroutine("NewWord", true);
-			}
+			s_instance.StartCoroutine("NewWord", true);
 		}
 	} 
 }

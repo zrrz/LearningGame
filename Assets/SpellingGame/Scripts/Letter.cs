@@ -21,7 +21,7 @@ public class Letter : MonoBehaviour {
 		}
 	}
 
-	void OnMouseDown() {
+	public void OnShot() {
 		if(move) {
 			if(!WordManager.instance.changingWord) {
 				if(WordManager.IsNextLetter(gameObject)) {
